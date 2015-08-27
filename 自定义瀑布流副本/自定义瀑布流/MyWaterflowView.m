@@ -138,7 +138,7 @@
         }
         
         CGRect cellFrame=CGRectMake(cellX, cellY, cellW, cellH);
-        
+        //self.cellArray = nil;
         [self.cellArray addObject:[NSValue valueWithCGRect:cellFrame]];
         
         //NSLog(@"%ld",self.cellArray.count);
@@ -156,6 +156,9 @@
          //NSLog(@"y----%f",cell.frame.origin.y);
     }
     
+    
+    
+    
     CGFloat maxY=MaxOfColumns[0];
     for (int a=0; a<intColumnsNumber; a++) {
         if (maxY<MaxOfColumns[a]) {
@@ -165,7 +168,7 @@
     CGFloat contentH=maxY+Bottom;
 #pragma mark 应该是这句话会自动调用layoutSubviews。。所以不加也可以..如果注视下面这句，则刷新无效
     self.contentSize=CGSizeMake(self.frame.size.width, contentH);
-   
+    
 }
 
 /**
@@ -206,7 +209,8 @@
             }
         }
     }
-
+    
+    //NSLog(@"subview的个数:%d",self.subviews.count);
 }
 
 -(void)clickCell:(UITapGestureRecognizer *)gesture{
